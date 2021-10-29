@@ -13,12 +13,14 @@ def main():
 
     WIDTH = 1280
     HEIGHT = 720
-    VELOCITY = 15
-    FPS = 30
+    # make velocity scale off of screen size, larger screens feel slow
+    # buttery smooth, but is absolutely overkill
+    VELOCITY = 15/240 * 30
+    FPS = 240
     fgcolor = pygame.Color('white')
     bgcolor = pygame.Color('black')
 
-    pygame.display.set_caption("Lab2")
+    pygame.display.set_caption("Pong")
     screen = pygame.display.set_mode((WIDTH,HEIGHT))
 
     #ball
@@ -49,9 +51,9 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+        # put outside for gif creation
         pygame.display.update()
-        clock.tick(FPS)
-            
+        clock.tick(FPS) 
         ball.update(wsize, HEIGHT, 1/FPS)
             
 
