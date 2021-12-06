@@ -6,5 +6,7 @@ The model that we decided to deploy was the SGD Regressor with a Standard Scalar
 When allowed to play, the AI will not lose, and will play until the program is terminated.
 
 Ryan Chin
+
 Lucas De Caux
+
 Devin Salter
