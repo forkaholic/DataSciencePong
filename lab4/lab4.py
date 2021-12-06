@@ -121,6 +121,10 @@ def main():
             if event.type == pygame.QUIT or cround >= round_limit:
                 # change the value to False, to exit the main loop
                 running = False
+                t = pygame.time.get_ticks()
+                deltaTime = (t - getTicksLastFrame) / 1000.0
+                # print("Lasted %.2f sec, t=%.2f, get=%.2f" % (deltaTime, t,getTicksLastFrame ) )
+                print("Time: %.2f sec" % (deltaTime) )
             # https://www.pygame.org/docs/ref/key.html
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
